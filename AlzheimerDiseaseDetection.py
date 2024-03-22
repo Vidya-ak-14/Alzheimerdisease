@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
-loaded_model=pickle.load(open('VotingClassifier.pkl', 'rb'))
+loaded_model=pickle.load(open('VotingClassifierfinal.pkl', 'rb'))
 def alzheimer_prediction(input_data):
      # changing the input_data to numpy array
     input_data_as_numpy_array = np.asarray(input_data)
