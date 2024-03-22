@@ -12,20 +12,19 @@ import pickle
 import streamlit as st
 loaded_model=pickle.load(open('VotingClassifier.pkl', 'rb'))
 def alzheimer_prediction(input_data):
-    # Convert input data to a pandas DataFrame
-    input_data_as_dataframe = pd.DataFrame(input_data, columns=['M_F', 'Age', 'EDUC', 'SES', 'MMSE', 'eTIV', 'nWBV', 'ASF'])
+     # changing the input_data to numpy array
+    input_data_as_numpy_array = np.asarray(input_data)
 
-    # Predict using the DataFrame
-    prediction = loaded_model.predict(input_data_as_dataframe)
+    # reshape the array as we are predicting for one instance
+    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 
-    # Print the prediction
+    prediction = loaded_model.predict(input_data_reshaped)
     print(prediction)
 
-    # Return the appropriate message based on the prediction
-    if prediction[0] == 0:
-       return 'The Person does not have Alzheimer Disease'
+    if (prediction[0] == 0):
+      return 'The Person does not have Alzheimer Disease'
     else:
-       return 'The person has Alzheimer Disease'
+      return 'The Person has Alzheimer Disease'
   
     
 def main():
