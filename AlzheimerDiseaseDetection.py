@@ -38,8 +38,8 @@ def main():
     # getting the input data from the user
     
     
-    M_F = st.number_input('Gender')
-    Age= st.number_input('Age')
+    M_F = st.text_input('Gender')
+    Age=st.text_input('Age')
     EDUC= st.number_input('Years of Education')
     SES= st.number_input('Socioeconomic Status')
     MMSE= st.number_input('Mini Mental State Examination')
@@ -60,7 +60,7 @@ def main():
     if st.button('Alzheimer Test Result'):
         #diagnosis = alzheimer_prediction([['M_F', 'Age', 'EDUC', 'SES', 'MMSE', 'eTIV', 'nWBV', 'ASF']])
         
-        diagnosis = alzheimer_prediction([[[[[[[[M_F, Age, EDUC, SES, MMSE, eTIV, nWBV, ASF]]]]]]]])
+        diagnosis = alzheimer_prediction([M_F, Age, EDUC, SES, MMSE, eTIV, nWBV, ASF])
 
     st.success(diagnosis)
     
