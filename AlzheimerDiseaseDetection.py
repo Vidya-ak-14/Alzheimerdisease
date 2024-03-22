@@ -6,7 +6,7 @@ Created on Sun Oct 22 17:26:07 2023
 """
 
 
-
+import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
