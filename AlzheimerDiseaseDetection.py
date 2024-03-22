@@ -60,7 +60,7 @@ def main():
     if st.button('Alzheimer Test Result'):
         #diagnosis = alzheimer_prediction([['M_F', 'Age', 'EDUC', 'SES', 'MMSE', 'eTIV', 'nWBV', 'ASF']])
         
-        diagnosis = alzheimer_prediction([M_F, Age, EDUC, SES, MMSE, eTIV, nWBV, ASF])
+        diagnosis = alzheimer_prediction([[[[[[[[M_F, Age, EDUC, SES, MMSE, eTIV, nWBV, ASF]]]]]]]])
 
     st.success(diagnosis)
     
